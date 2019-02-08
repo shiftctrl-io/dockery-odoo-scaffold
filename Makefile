@@ -1,9 +1,5 @@
 # Init the repository
-ifeq ($(OS),Windows_NT)
-	ENV = $$(cat .env | grep -v "\#" | xargs -d "\r")
-else
-	ENV = $$(cat .env | grep -v "\#" | xargs)
-endif
+ENV = $$(cat .env | grep -v "\#" | xargs -d "\r")
 
 init: chmod-scripts
 	hack/init-repo.sh
